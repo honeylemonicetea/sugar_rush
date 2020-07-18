@@ -30,6 +30,7 @@ while True:
                     wrongs.add(user_letter)
                 k = "".join(finding)
                 if "-" not in k and tries > 0:
+                    #isis: o_O
                     print()
                     print("{}".format(k))
                     print("You guessed the word!")
