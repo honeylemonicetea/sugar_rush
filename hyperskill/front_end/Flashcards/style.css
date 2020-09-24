@@ -1,0 +1,78 @@
+@import url('https://fonts.googleapis.com/css2?family=Kufam:ital@1&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Architects+Daughter&display=swap');
+body{
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.whole{
+    font-family: 'Architects Daughter', cursive;
+    background-image: linear-gradient(#F3BAE3, #9CBAED);
+    position: fixed;
+    top:0;
+    left:0;
+    right: 0;
+    bottom: 0;
+}
+
+#title{
+    background: linear-gradient(90deg, #EC008C, #FC6767);
+    position: relative;
+    width: 400px;
+    left: 35%;
+    text-align: center;
+    border-style: solid;
+    border-radius: 25px;
+    border-color: antiquewhite;
+}
+
+#grid{
+    display: grid;
+    grid-template-rows: 150px 150px 150px;
+    grid-template-columns: 150px 150px 150px;
+    grid-gap: 10px;
+    position: absolute;
+    left: 32%;
+    width: 800px;
+
+}
+
+
+.card{
+    width: 140px;
+    height: 140px;
+    position: relative;
+    transition: all 1s linear;
+    transform-style: preserve-3d;
+}
+.front, .back{
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 20px;
+    font-family: 'Architects Daughter', cursive;
+    border-radius: 20px;
+    position: absolute;
+    text-align: center;
+
+
+
+}
+
+.front{
+    background: linear-gradient(#FFCFC5, #F2F3BC);
+    z-index: 2;
+    backface-visibility: hidden;
+}
+.back{
+    background: linear-gradient(#12FFF7, #B3FFAB);
+    z-index: 1;
+    transform: rotateY(180deg);
+}
+.container:hover .card{
+    transform: rotateY(180deg);
+}
+
