@@ -31,6 +31,7 @@ document.addEventListener('keydown', function (event){
         audio.src = "white_keys/G.mp3";
         audio.play()
     }
+    
     else if (event.code == "KeyH"){
         let audio = document.createElement("AUDIO");
         let src = audio.src;
