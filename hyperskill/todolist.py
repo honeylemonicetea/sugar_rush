@@ -1,10 +1,10 @@
 from sqlalchemy import create_engine
-engine = create_engine('sqlite:///todo.db?check_same_thread=False')
+from sqlalchemy.orm import sessionmaker
 from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy import Column, Integer, String, Date
 from datetime import datetime, timedelta
 
-Base = declarative_base()
+
 class Table(Base):
     __tablename__ = 'task'
     id = Column(Integer, primary_key=True)
@@ -12,10 +12,14 @@ class Table(Base):
     deadline = Column(Date, default=datetime.today())
     def __repr__(self):
         return self.task
+
+    
+Base = declarative_base()   
+engine = create_engine('sqlite:///todo.db?check_same_thread=False')
 daysweek = {0 : 'Monday', 1: "Tuesday", 2: "Wednesday", 3: "Thursday", 4: "Friday", 5: "Saturday", 6: "Sunday"}
 missed = dict()
 Base.metadata.create_all(engine)
-from sqlalchemy.orm import sessionmaker
+
 Session = sessionmaker(bind=engine)
 session = Session()
 session.commit()
